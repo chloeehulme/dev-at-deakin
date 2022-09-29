@@ -1,0 +1,29 @@
+.thumbnail iframe {
+    width: 1000px;
+    height: 700px;
+    border-radius: 30px;
+}
+
+.thumbnail {
+    position: relative;
+    -webkit-transform: scale(0.25);
+    -webkit-transform-origin: 0 0;
+}
+
+.thumbnail:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.thumbnail-container {
+    width: calc(1000px * 0.25);
+    height: calc(700px * 0.25);
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}

@@ -1,0 +1,15 @@
+/*
+    Authored by Chloe Hulme as part of SIT313: Secure Front-end Applicaitons (T2 2022)
+*/
+
+.hero-image .container {
+    width: 1440px;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 60px;
+    padding: 0; 
+}
+
+.hero-image img {
+    width: 100%;
+}

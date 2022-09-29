@@ -1,0 +1,23 @@
+.contact-container {
+    width: 300px;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.contact-container p {
+    margin-top: 0px;
+}
+
+.contact-container h5 {
+    margin-bottom: 5px;
+}
+
+.contact-cards {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-card-header h3 {
+    font-size: 12px;
+}

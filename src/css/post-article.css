@@ -1,0 +1,87 @@
+
+.post .container {
+    width: 1180px;
+    text-align: center;
+    padding: 0;
+}
+
+.post form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post textarea {
+    width: 80%;
+    height: 40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 0.4px;
+    line-height: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.post button {
+    margin-left: 70%;
+    margin-top: 60px;
+    margin-bottom: 65px;
+}
+
+.post h2 {
+    width: 200px;
+}
+
+.post .title-container {
+    width: 200px;
+    margin-right: 65%;
+}
+
+.post .title-container button {
+    margin: 0;
+    margin-top: 10px;
+    height: 27px;
+    width: 135px;
+    box-sizing: border-box;
+    border-radius: 60px 60px 60px 60px;
+    background-color: #f98c4e;
+    border: 1px solid #f98c4e;
+    color: #FFF;
+    font-size: 12.5px;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+.post .title-container button:hover {
+    color: #f98c4e;
+    border: 1px solid #f98c4e;
+    background-color: #FFF;
+    border: 1px solid #3E3E3E;
+}
+
+::-webkit-file-upload-button {
+    margin-top: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 21px;
+    padding-right: 21px;
+    box-sizing: border-box;
+    border-radius: 60px 60px 60px 60px;
+    background-color: #f98c4e;
+    border: 1px solid #f98c4e;
+    color: #FFF;
+    font-size: 13px;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+::-webkit-file-upload-button:hover {
+    color: #f98c4e;
+    border: 1px solid #f98c4e;
+    background-color: #FFF;
+    border: 1px solid #3E3E3E;
+}

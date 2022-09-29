@@ -1,0 +1,68 @@
+
+.row {
+    display: flex;
+}
+
+.column{
+    flex: 33.33%;
+    padding: 100px;
+    padding-bottom: 0;
+}
+
+.column h3 {
+    color: #3E3E3E;
+}
+
+.column h3:hover {
+    color: darkcyan;
+}
+
+.column .text-colour-grey {
+    color: #3E3E3E;
+}
+
+.rating-author {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.rating {
+    display: flex;
+}
+
+.star {
+    margin-right: 3px;
+    color: darkcyan;
+}
+
+.author {
+    color: darkcyan;
+    display: flex;
+    text-decoration: none;
+}
+
+.column a {
+    text-decoration: none;
+    color: black;
+}
+
+.column img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.column img:hover {
+    filter: brightness(50%);
+}
+
+.fname {
+    margin: 0;
+    margin-right: 6px;
+}
+
+.lname {
+    margin: 0;
+}
+
+

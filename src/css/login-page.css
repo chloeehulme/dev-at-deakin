@@ -1,0 +1,102 @@
+
+.login-container {
+    margin-top: 50px;
+}
+
+.login-container .login-banner {
+    display: flex;
+    justify-content: center;
+    background: darkcyan;
+}
+
+.login-banner img {
+    width: 150px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.login-container form input {
+    width: 250px;
+    box-sizing: border-box;
+    border-radius: 60px 60px 60px 60px;
+    height: 30px;
+    border: 1px solid #3E3E3E;
+    color: #3E3E3E;
+    padding-left: 22px;
+    margin-top: 20px;
+}
+
+.login-container .login-details {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-container .form-section {
+    padding: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: rgba(200,200,200,0.18);
+}
+
+.login-container .login-button {
+    height: 30px;
+    width: 250px;
+    box-sizing: border-box;
+    border-radius: 60px 60px 60px 60px;
+    background-color: darkcyan;
+    border: 1px solid darkcyan;
+    color: #FFF;
+    font-size: 12px;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.login-container .login-button:hover {
+    color: darkcyan;
+    border: 1px solid darkcyan;
+    background-color: #FFF;
+    border: 1px solid #3E3E3E;
+}
+
+.login-container h2 {
+    margin-top: 60px;
+    font-weight: normal;
+    font-size: 15px;
+    text-align: center;
+    color: #3E3E3E;
+}
+
+.login-container .sign-up {
+    height: 25px;
+    width: 180px;
+    box-sizing: border-box;
+    border-radius: 60px 60px 60px 60px;
+    background-color: #c74298;
+    border: 1px solid #c74298;
+    color: #FFF;
+    font-size: 10px;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.login-container .sign-up:hover {
+    color: #c74298;
+    border: 1px solid #c74298;
+    background-color: #FFF;
+    border: 1px solid #3E3E3E;
+}
+
+.login-container .forgot-password {
+    display: flex;
+    justify-content: center;
+}

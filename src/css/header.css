@@ -1,0 +1,112 @@
+/*
+    Authored by Chloe Hulme as part of SIT313: Secure Front-end Applicaitons (T2 2022)
+*/
+
+.container {
+    width: 1440px;
+    max-width: 90%;
+    margin: auto;
+    padding: 0 16px;  
+}
+
+header {
+    background-color: #FFF;
+    box-shadow: 0 0.02px 6px 0 darkcyan;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 24px;
+    letter-spacing: 0.37px;
+    color: #3E3E3E;
+    padding-bottom: 6px;
+}
+
+header span {
+    color: darkcyan;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+header .search-bar {
+    display: flex;
+    justify-content: center;
+}
+
+header .search-bar input {
+    height: 30px;
+    width: 326px;
+    margin-left: 0px;
+    border-radius: 60px 0 0 60px;
+    box-sizing: border-box;
+    border: 1px solid #3E3E3E;
+    border-right: none;
+    color: #3E3E3E;
+    font-size: 14px;
+    letter-spacing: 0.35px;
+    line-height: 21px;
+    padding-left: 22px;
+}
+
+header .search-icon button {
+    height: 30px;
+    width: 40px;
+    box-sizing: border-box;
+    border-radius: 0 60px 60px 0;
+    background-color: #c74298;
+    border: 1px solid #c74298;
+    color: #FFF;
+    cursor: pointer;
+}
+
+header button:hover {
+    color: #c74298;
+    border: 1px solid #c74298;
+    background-color: #FFF;
+    border: 1px solid #3E3E3E;
+}
+
+header ul {
+    padding-left: 0px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+header nav ul li .header-links {
+    color: #3E3E3E;
+    font-size: 15px;
+    letter-spacing: 0.37px;
+    margin-right: 24px;
+    text-decoration: none;
+}
+
+header nav ul li .header-links:hover {
+    color: darkcyan;
+}
+
+header nav ul li:last-of-type .header-links {
+    margin-right: 0;
+}
+
+.header .welcome-user {
+    width: 400px;
+}
+
+.header .welcome-user h2 {
+    font-size: 15px;
+    font-weight: normal;
+    padding: 5px;
+}

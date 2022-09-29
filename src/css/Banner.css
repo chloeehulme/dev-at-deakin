@@ -1,0 +1,14 @@
+
+.banner .container {
+    color: white;
+    text-align: left;
+    font-size: 14px;
+    background-color: darkcyan;
+    box-sizing: border-box;
+    border-radius: 60px 60px 60px 60px;
+    opacity: 75%;
+}
+
+.banner h2 {
+    padding: 4px;
+}

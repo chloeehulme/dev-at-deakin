@@ -1,0 +1,34 @@
+
+
+.full-article {
+    display: flex;
+    justify-content: center;
+}
+
+.full-article .article-container {
+    max-width: 80%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    align-self: center;
+}
+
+.full-article .article-container .author-name {
+    color: darkcyan;
+    font-size: 30px;
+}
+
+.full-article .article-container .article-img {
+    display: flex;
+    justify-content: center;
+}
+
+.full-article .article-container .article-img img {
+    border-radius: 30px;
+    margin-bottom: 80px;
+}
+
+.full-article .article-container .article-details h3 {
+    font-size: 40px;
+}
+
+

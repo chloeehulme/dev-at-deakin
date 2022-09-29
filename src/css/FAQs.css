@@ -1,0 +1,23 @@
+.faqs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.faqs .faq-container {
+    margin-top: 130px;
+}
+
+.faq-container {
+    width: 90%;
+    background-color: #F5F5F5;
+    border-radius: 30px;
+    padding-bottom: 50px;
+    padding-right: 30px;
+}
+
+.faq-container .faq-header {
+    color: #3E3E3E;
+    margin-left: 100px;
+    font-size: 30px;
+}

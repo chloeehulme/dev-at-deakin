@@ -1,0 +1,32 @@
+.faq-card-container {
+    margin-left: 45px;
+    display: flex;
+    background-color: white;
+    width: 90%;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0.2px 1.2px 0.2px 0.2px rgb(249, 140, 78);
+}
+
+.header-symbol {
+    display: flex;
+    margin-left: 20px;
+}
+
+.symbol {
+   font-size: 30px;
+}
+
+.question-answer {
+    margin-left: 20px;
+    color: #3E3E3E;
+}
+
+.question-answer p {
+    margin-top: 0px;
+}
+
+.faq-card-header {
+    color: #3E3E3E;
+}

@@ -1,0 +1,30 @@
+
+.post-button .container {
+    text-align: right;
+    margin-right: 150px;
+    padding-top: 80px;
+    margin-bottom: 100px;
+}
+
+.post-button button {
+    height: 50px;
+    width: 150px;
+    max-width: 20%;
+    box-sizing: border-box;
+    border-radius: 60px 60px 60px 60px;
+    background-color: #c74298;
+    border: 1px solid #c74298;
+    color: #FFF;
+    font-size: 15px;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+.post-button button:hover {
+    color: #c74298;
+    border: 1px solid #c74298;
+    background-color: #FFF;
+    border: 1px solid #3E3E3E;
+}
