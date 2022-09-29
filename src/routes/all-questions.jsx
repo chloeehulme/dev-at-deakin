@@ -3,6 +3,8 @@
 
 import React, {useContext, useState, useEffect} from 'react'
 import { QuestionContext } from '../context/question.context';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../utilities/firebase';
 import QCard from '../QCard'
 import Header from '../header'
 import Footer from '../footer'
@@ -14,8 +16,15 @@ import '../css/all-page.css'
 
 const CardList = () =>
 {  
-    // Load page at top
+    const navigate = useNavigate()
+
+    // Load page at top, navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+
         window.scrollTo(0, 0)
     }, [])
 

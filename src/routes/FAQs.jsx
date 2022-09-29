@@ -1,6 +1,8 @@
 // FAQs page
 
 import React, {useEffect} from 'react';
+import { auth } from '../utilities/firebase';
+import { useNavigate } from 'react-router-dom';
 import { faker } from '@faker-js/faker'
 import Header from '../header';
 import FaqCard from '../faqCard';
@@ -9,8 +11,15 @@ import '../css/FAQs.css';
 
 function FAQs() {
 
-    // Loads to top of page
+    const navigate = useNavigate()
+
+    // Loads to top of page, navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+
         window.scrollTo(0, 0)
     }, [])
 

@@ -1,8 +1,9 @@
 // The home page of Dev@Deakin.
 
 import React, {useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../css/App.css';
+import { auth } from '../utilities/firebase';
 import Header from '../header'
 import HeroImage from '../hero-image'
 import SignUp from '../sign-up'
@@ -14,8 +15,15 @@ import SeeAllButton from '../see-all-button'
 
 function HomePage() {
 
-    // Loads to top of page
+    const navigate = useNavigate()
+
+    // Loads to top of page, navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+
         window.scrollTo(0, 0)
     }, [])
 

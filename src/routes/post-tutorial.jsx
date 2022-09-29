@@ -8,16 +8,25 @@ import {ref, uploadBytes} from 'firebase/storage'
 import '../css/post-article.css';
 import { TutorialContext } from '../context/tutorial.context';
 import {UserContext} from '../context/user.context'
+import { auth } from '../utilities/firebase';
 import LoadingSpinner from '../loading-spinner';
 import Header from '../header';
 import Banner from '../Banner';
 import Footer from '../footer';
+import { useNavigate } from 'react-router-dom';
 
 
 function PostTutorial() {
 
-    // Load to top of page
+    const navigate = useNavigate()
+
+    // Load to top of page, navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+
         window.scrollTo(0, 0)
     }, [])
 

@@ -1,10 +1,10 @@
 // Displays all articles from database on a single page. Each article can be clicked on for more information.
 
 import React, {useContext, useEffect, useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {ArticleContext} from '../context/article.context'
 import {getDownloadURL, listAll, ref} from 'firebase/storage'
-import { storage } from '../utilities/firebase';
+import { storage, auth } from '../utilities/firebase';
 import Card from '../ArticleCard'
 import Header from '../header'
 import Banner from '../Banner'
@@ -18,8 +18,15 @@ const CardList = () =>
 
     const [imageDetails, setImageDetails] = useState([])
 
-    // Load page at top and gets all images from storage bucket (name and url)
+    const navigate = useNavigate()
+
+    // Load page at top and gets all images from storage bucket (name and url), navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+
         window.scrollTo(0, 0)
         listAll(imageListRef).then((response) => {
             response.items.forEach((item) => {

@@ -1,7 +1,8 @@
 // The template for a full question. Clicking on a question card will route to this component.
 
 import React, { useContext, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { auth } from '../utilities/firebase';
 import '../css/full-article.css'
 import '../css/header.css';
 import {UserContext} from '../context/user.context'
@@ -11,8 +12,15 @@ import { QuestionContext } from '../context/question.context';
 
 const FullQuestion = () =>
 {  
-    // Loads to top of page
+    const navigate = useNavigate()
+
+    // Loads to top of page, navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+
         window.scrollTo(0, 0)
     }, [])
 

@@ -3,7 +3,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../css/full-article.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../utilities/firebase';
 import '../css/header.css';
 import {UserContext} from '../context/user.context'
 import { TutorialContext } from '../context/tutorial.context';
@@ -18,13 +19,21 @@ import { doc, setDoc } from "firebase/firestore";
 
 const FullTutorial = () =>
 {  
+    const navigate = useNavigate()
+
     const videoListRef = ref(storage, "tutorials/")
 
     const [videoDetails, setVideoDetails] = useState([])
 
     // Load page at top and gets all videos from storage bucket (name and url)
     // increments view count on tutorial
+    // navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+
         // Load to page top
         window.scrollTo(0, 0)
 

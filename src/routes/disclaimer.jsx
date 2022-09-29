@@ -1,14 +1,23 @@
 // Deakin's disclaimer
 
 import React, {useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../utilities/firebase';
 import Header from '../header';
 import Footer from '../footer';
 import '../css/help.css';
 
 function Disclaimer() {
 
-    // Loads to top of page
+    const navigate = useNavigate()
+
+    // Loads to top of page, navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+
         window.scrollTo(0, 0)
     }, [])
 

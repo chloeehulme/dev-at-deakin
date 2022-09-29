@@ -3,7 +3,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../css/full-article.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../utilities/firebase';
 import '../css/header.css';
 import {UserContext} from '../context/user.context'
 import {ArticleContext} from '../context/article.context'
@@ -14,12 +15,19 @@ import { storage } from '../utilities/firebase';
 
 const FullArticle = () =>
 {  
+    const navigate = useNavigate()
+
     const imageListRef = ref(storage, "articles/")
 
     const [imageDetails, setImageDetails] = useState([])
 
-    // Load page at top
+    // Load page at top, navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+
         window.scrollTo(0, 0)
         listAll(imageListRef).then((response) => {
             response.items.forEach((item) => {

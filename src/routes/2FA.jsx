@@ -14,8 +14,13 @@ function ResetPassword() {
     const navigate = useNavigate();
     const user = auth.currentUser;
 
-    // Sends code via email on page load
+    // Sends code via email on page load, navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+        
         sendEmail();
     }, [])
 
@@ -35,7 +40,7 @@ function ResetPassword() {
             if (seconds === 0) {
                 if (minutes === 0) {
                     verficationCode = Math.floor(100000000 + Math.random() * 900000000);
-                    navigate('/login')
+                    navigate('/')
                 }
                 else {
                     setTimer(({

@@ -1,8 +1,8 @@
 // Creates an account from user input and saves to firebase
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { createAuthUserWithEmailAndPassword, createUserDocFromAuth } from '../utilities/firebase';
+import { createAuthUserWithEmailAndPassword, createUserDocFromAuth, auth } from '../utilities/firebase';
 import '../css/login-page.css'
 
 function CreateAccount() {

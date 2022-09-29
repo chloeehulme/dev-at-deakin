@@ -1,9 +1,9 @@
 // Displays all tutorials from database on a single page. Each tutorial can be clicked on for more information.
 
 import React, {useContext, useEffect, useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {getDownloadURL, listAll, ref} from 'firebase/storage'
-import { storage } from '../utilities/firebase';
+import { storage, auth } from '../utilities/firebase';
 import { TutorialContext } from '../context/tutorial.context';
 import VideoCard from '../VideoCard';
 import Header from '../header'
@@ -19,8 +19,15 @@ const CardList = () =>
 
     const [videoDetails, setVideoDetails] = useState([])
 
-    // Load page at top and gets all videos from storage bucket (name and url)
+    const navigate = useNavigate()
+
+    // Load page at top and gets all videos from storage bucket (name and url), navigates back to login page if no authorised user detected
     useEffect(() => {
+        if (auth.currentUser == null)
+        {
+            navigate('/')
+        }
+
         window.scrollTo(0, 0)
         listAll(videoListRef).then((response) => {
             response.items.forEach((item) => {
