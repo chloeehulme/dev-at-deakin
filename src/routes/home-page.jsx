@@ -1,6 +1,6 @@
 // The home page of Dev@Deakin.
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/App.css';
 import { auth } from '../utilities/firebase';
@@ -12,14 +12,17 @@ import FeaturedArticles from '../FeaturedArticles'
 import FeaturedTutorials from '../FeaturedTutorials';
 import Featured from '../Featured'
 import SeeAllButton from '../see-all-button'
+import {UserContext} from '../context/user.context'
 
 function HomePage() {
 
     const navigate = useNavigate()
 
+    const {currentUser} = useContext(UserContext);
+
     // Loads to top of page, navigates back to login page if no authorised user detected
     useEffect(() => {
-        if (auth.currentUser == null)
+        if (currentUser == null)
         {
             navigate('/')
         }

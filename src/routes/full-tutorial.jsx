@@ -50,8 +50,6 @@ const FullTutorial = () =>
         tutorial[mappedTutorials[id][0]] = {description: mappedTutorials[id][1].description, tags: mappedTutorials[id][1].tags, 
             postDate: mappedTutorials[id][1].postDate, author: mappedTutorials[id][1].author, views: mappedTutorials[id][1].views + 1, 
             numRatings: mappedTutorials[id][1].numRatings, ratingSum: mappedTutorials[id][1].ratingSum, avgRating: mappedTutorials[id][1].avgRating}
-        console.log("title:" + mappedTutorials[id][0])
-        console.log("current views:" + mappedTutorials[id][1].views)
 
         const docRef = doc(dB, 'tutorials', mappedTutorials[id][0])
         const data = {
@@ -59,7 +57,7 @@ const FullTutorial = () =>
         };
         setDoc(docRef, data, {merge:true})
         .then(docRef => {
-            console.log("Views in Document has been updated successfully");
+            console.log("Views in Document have been updated successfully");
         })
         .catch(error => {
             console.log(error);
