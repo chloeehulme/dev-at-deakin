@@ -22,7 +22,7 @@ function ResetPassword() {
         try {
             const response = await sendAuthUserPasswordResetEmail(email);
             console.log(response);
-            navigate('/login');
+            navigate('/');
         } catch (error) {
             console.log('error resetting password', error.message);
             alert("Could not send link! Try again...")
