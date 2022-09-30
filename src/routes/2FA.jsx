@@ -40,6 +40,7 @@ function ResetPassword() {
             if (seconds === 0) {
                 if (minutes === 0) {
                     verficationCode = Math.floor(100000000 + Math.random() * 900000000);
+                    auth.signOut();
                     navigate('/')
                 }
                 else {
