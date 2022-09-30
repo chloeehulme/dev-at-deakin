@@ -63,7 +63,7 @@ const CardList = () =>
             <div style={{maxWidth: "33.33%"}}>
                 <div style={{marginTop: "30px"}}>
                     {/* custom url using index created above */}
-                    <Link to={{ pathname: `/full-article/${index}/${art.title}`, state: index }}
+                    <Link to={{ pathname: `/full-article/${index}/${art[0]}`, state: index }}
                             className={`card-wrapper restore-${art}`} style={{textDecoration: "none"}}>
                         <Card 
                         image = {img_url}
