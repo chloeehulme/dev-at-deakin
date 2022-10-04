@@ -25,6 +25,8 @@ import Contact from './routes/contact';
 import Privacy from './routes/privacy';
 import Disclaimer from './routes/disclaimer';
 import SafetyAndSecurity from './routes/safety-and-security';
+import SubscriptionPlans from './routes/subscriptionPlans'
+import StripeContiner from './routes/StripeContainer';
 import './css/App.css';
 
 function App() {
@@ -40,6 +42,7 @@ function App() {
                   <Route path="/home-page" element={<HomePage />} />
                   <Route path='/create-account' element={<CreateAccount />} />
                   <Route path='/post' element={<NewPostPage />} />
+                  <Route path='/plans' element={<SubscriptionPlans />} />
                   <Route path="/full-article/:id/:title" element={<FullArticle />} />
                   <Route path="/full-question/:id/:title" element={<FullQuestion />} />
                   <Route path="/full-tutorial/:id/:title" element={<FullTutorial />} />
@@ -55,6 +58,7 @@ function App() {
                   <Route path='/privacy' element={<Privacy />} />
                   <Route path='/disclaimer' element={<Disclaimer />} />
                   <Route path='/safety-and-security' element={<SafetyAndSecurity />} />
+                  <Route path='/payment' element={<StripeContiner />} />
                 </Routes>
               </div>
             </QuestionProvider>

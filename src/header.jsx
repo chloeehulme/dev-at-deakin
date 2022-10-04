@@ -52,8 +52,8 @@ function Header(props) {
                     </div>
                     <nav>
                         <ul>
+                            <li><Link to = '/plans' className='header-links'> Plans </Link></li>
                             <li><Link to = '/post' className='header-links'> Post </Link></li>
-                            {/* <li><Link to = '/' className='header-links'> Login </Link></li> */}
                             <li><Link to = '/' className='header-links' onClick={handleLogout}> Log Out </Link></li>
                         </ul>
                     </nav>

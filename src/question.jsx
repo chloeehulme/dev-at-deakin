@@ -6,7 +6,7 @@ import {addCollectionAndDocument} from './utilities/firebase';
 import './css/post-article.css';
 import './css/post-button.css';
 import { QuestionContext } from './context/question.context';
-
+import Editor from './Editor';
 
 function Question() {
 
@@ -35,8 +35,8 @@ function Question() {
             return
         }
         try {
-            const response = addCollectionAndDocument('questions', [{title, description, tags, postDate}])
-            question[title] = {description: description, tags: tags, postDate: postDate}
+            const response = addCollectionAndDocument('questions', [{title, description, tags, postDate, code}])
+            question[title] = {description: description, tags: tags, postDate: postDate, code: code}
             console.log(response)
         } catch (error) {
             console.log("error writing to DB", error.message)
@@ -55,6 +55,8 @@ function Question() {
         }})
     }
 
+    const [code, setCode] = useState("");
+
     return (
         <div className="post">
             <form id='myForm' onSubmit={handleSubmit}>
@@ -66,6 +68,14 @@ function Question() {
                     <Title text="Describe Your Problem" className="description"/>
                 </div>
                 <textarea name='description' type='text' value={question.description} onChange={handleChange} style={{height: "200px"}}/>
+                <div className='title-container'>
+                    <Title text="Code Editor" className="codepen"/>
+                </div>
+                <Editor
+                    language="javascript"
+                    value={code}
+                    onChange={setCode}
+                />
                 <div className='title-container'>
                     <Title text="Tags"/>
                 </div>

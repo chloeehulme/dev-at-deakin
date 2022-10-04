@@ -1,6 +1,6 @@
 // The template for a full question. Clicking on a question card will route to this component.
 
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { auth } from '../utilities/firebase';
 import '../css/full-article.css'
@@ -8,7 +8,7 @@ import '../css/header.css';
 import {UserContext} from '../context/user.context'
 import Footer from '../footer'
 import { QuestionContext } from '../context/question.context';
-
+import ReactMarkdown from "react-markdown";
 
 const FullQuestion = () =>
 {  
@@ -32,6 +32,10 @@ const FullQuestion = () =>
      // Maps question context to array
     var mappedQuestions = Object.entries(question)
 
+    const content = "```" + "\n" + mappedQuestions[id][1].code
+
+    console.log(content)
+
     return (
         <div>
             <div className='full-article'>
@@ -51,7 +55,20 @@ const FullQuestion = () =>
                             <h5 style={{color: "#3E3E3E", fontWeight: "normal", fontSize: "13px"}} className='fname'>{mappedQuestions[id][1].postDate}</h5>
                             <h5 style={{fontSize: "13px"}} className='lname'>{mappedQuestions[id][1].tags}</h5>
                         </div>
-                        <h5 style={{fontWeight: "normal", fontSize: "20px"}}>{mappedQuestions[id][1].description}</h5>
+                        <h5 style={{fontWeight: "normal", fontSize: "20px"}}>
+                            <ReactMarkdown>
+                                {mappedQuestions[id][1].description}
+                            </ReactMarkdown>
+                        </h5>
+                        {mappedQuestions[id][1].code === undefined ? 
+                        <span></span>
+                        :
+                        <div style={{marginTop:"50px", borderRadius:"30px", backgroundColor:"lightcyan", padding:"30px"}}>
+                            <ReactMarkdown>
+                                {content}
+                            </ReactMarkdown>
+                        </div>
+                        }
                     </div>
                 </div>
             </div>

@@ -1,0 +1,23 @@
+.subscription-card {
+    width: 200px;
+    border: 1px solid #DEDEDE;
+    box-shadow: 0.2px 1.2px 0.2px 0.2px #DEDEDE;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.sub-header {
+    font-weight: normal;
+    color: darkcyan;
+}
+
+.premium-card:hover {
+    border: 1px solid #c74298;
+    box-shadow: 0.2px 1.2px 0.2px 0.2px #c74298;
+    cursor: pointer;
+}
+
+.premium-card:hover h3 {
+    color: #c74298;
+}
