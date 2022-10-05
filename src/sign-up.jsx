@@ -2,40 +2,38 @@
 
 import React from 'react';
 import { useRef } from 'react';
-import emailjs from '@emailjs/browser'
+import axios from 'axios'
 import './css/sign-up.css';
 
 function SignUp() {
     const form = useRef()
-    const sendEmail = (e) => {
+
+    const sendEmail = async (e) => {
         e.preventDefault();
 
-    let userEmail = document.getElementById("email").value;
+        let userEmail = document.getElementById("email").value;
 
-    var contactParams = {
-        user_email: userEmail
-    };
+        var form = document.getElementById("myForm");
+        form.reset();
 
-    // Gets user details and sends email
-        emailjs.send(
-            'service_rc7amr7', 
-            'template_fkrxh4k', 
-            contactParams, 
-            'AnUKOjuV8Hm6r-AIE'
-        )
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-        });
-        e.target.reset();
+        try {
+            const response = await axios.post("http://localhost:8000/signup", {
+            email: userEmail
+            })
+
+            console.log(response.data)
+
+        } catch (error) {
+
+            console.log("error: ", error)
+        }
     };
 
     return (
         <div className='sign-up'>
             <section class="newsletter" id="newsletter-section">
                 <p>sign up for our daily insider</p>
-                <form ref={form} onSubmit={sendEmail}>
+                <form id='myForm' ref={form} onSubmit={sendEmail}>
                     <input type="email"  name="email" id="email" required="required" placeholder="Your email..." />
                     <button type="submit">Subscribe</button> 
                 </form>
