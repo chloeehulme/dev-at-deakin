@@ -26,7 +26,7 @@ function LoginPage() {
         try {
             const {user} = await signInAuthUserWithEmailAndPassword(email, password);
             setCurrentUser(user)
-            navigate('/home-page');
+            navigate('/user-2FA');
         } catch (error) {
             console.log('error logging in', error.message);
             alert("Invalid username or password! Try again...")
